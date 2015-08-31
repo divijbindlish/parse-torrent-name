@@ -6,7 +6,7 @@ insert_final_newline = true
 indent_style = space
 indent_size = 4
 
-[.travis.yml]
+[{.travis.yml,*.json}]
 indent_size = 2
 
 [*.md]
