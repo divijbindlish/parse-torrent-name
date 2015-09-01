@@ -1,4 +1,4 @@
 include LICENSE
 include MANIFEST.in
 include *.json
-include README.rst
+include README.md
