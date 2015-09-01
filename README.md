@@ -1,4 +1,4 @@
-# parse-torrent-name
+# parse-torrent-name ![Build Status](https://travis-ci.org/divijbindlish/parse-torrent-name.svg?branch=master)
 
 > Parse torrent name of a movie or TV show
 
