@@ -2,7 +2,7 @@ import json
 import os
 import unittest
 
-import ptn
+import PTN
 
 
 class ParseTest(unittest.TestCase):
@@ -21,7 +21,7 @@ class ParseTest(unittest.TestCase):
             expected_results = json.load(output_file)
 
         for torrent, expected_result in zip(torrents, expected_results):
-            result = ptn.parse(torrent)
+            result = PTN.parse(torrent)
             self.assertItemsEqual(result, expected_result)
 
 
