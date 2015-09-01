@@ -1,6 +1,6 @@
 # parse-torrent-name ![Build Status](https://travis-ci.org/divijbindlish/parse-torrent-name.svg?branch=master)
 
-> Parse torrent name of a movie or TV show
+> Extract information from a filename
 
 A python port of [Jānis](https://github.com/jzjzjzj)' awesome
 [library](https://github.com/jzjzjzj/parse-torrent-name) written in javascript.

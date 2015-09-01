@@ -16,7 +16,8 @@ setup(
     packages=['PTN'],
     keywords=('parse parser torrent torrents name names proper rename '
               'movie movies tv show shows series extract find quality '
-              'group codec audio resolution title season episode year '),
+              'group codec audio resolution title season episode year '
+              'information filename filenames file files meaningful'),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
