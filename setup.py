@@ -25,5 +25,4 @@ setup(
         'Natural Language :: English',
         'Topic :: Text Processing'
     ]
-
 )
