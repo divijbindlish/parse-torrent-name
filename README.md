@@ -1,6 +1,6 @@
 # parse-torrent-name ![Build Status](https://travis-ci.org/divijbindlish/parse-torrent-name.svg?branch=master)
 
-> Extract information from a filename
+> Extract media information from a filename
 
 A python port of [Jānis](https://github.com/jzjzjzj)' awesome
 [library](https://github.com/jzjzjzj/parse-torrent-name) written in javascript.
@@ -8,14 +8,26 @@ A python port of [Jānis](https://github.com/jzjzjzj)' awesome
 ## Install
 
 ```sh
-$ pip install parse-torrent-name
+$ easy_install parse-torrent-name
 ```
+
+PTN can also be installed using `pip`.
 
 ## Usage
 
 ```py
 import PTN
 
+PTN.parse('A freakishly cool movie or TV episode')
+```
+
+PTN works well for both movies and TV episodes. All meaningful information is
+extracted and returned together in a dictionary. The text which could not be
+parsed is returned in the `excess` field.
+
+### Movies
+
+```py
 PTN.parse('San Andreas 2015 720p WEB-DL x264 AAC-JYK')
 # {
 #     'group': 'JYK',
@@ -27,6 +39,22 @@ PTN.parse('San Andreas 2015 720p WEB-DL x264 AAC-JYK')
 #     'quality': 'WEB-DL'
 # }
 
+PTN.parse('The Martian 2015 540p HDRip KORSUB x264 AAC2 0-FGT')
+# {
+#     'group': '0-FGT',
+#     'title': 'The Martian',
+#     'resolution': '540p',
+#     'excess': ['KORSUB', '2'],
+#     'codec': 'x264',
+#     'year': 2015,
+#     'audio': 'AAC',
+#     'quality': 'HDRip'
+# }
+```
+
+### TV episodes 
+
+```py
 PTN.parse('Mr Robot S01E05 HDTV x264-KILLERS[ettv]')
 # {
 #     'episode': 5,
@@ -35,6 +63,16 @@ PTN.parse('Mr Robot S01E05 HDTV x264-KILLERS[ettv]')
 #     'codec': 'x264',
 #     'group':  'KILLERS[ettv]'
 #     'quality': 'HDTV'
+# }
+
+PTN.parse('friends.s02e01.720p.bluray-sujaidr')
+# {
+#     'episode': 1,
+#     'season': 2,
+#     'title': 'friends',
+#     'resolution': '720p',
+#     'group': 'sujaidr',
+#     'quality': 'bluray'    
 # }
 ```
 
