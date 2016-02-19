@@ -3,15 +3,25 @@
 > Extract media information from a filename
 
 A python port of [Jānis](https://github.com/jzjzjzj)' awesome
-[library](https://github.com/jzjzjzj/parse-torrent-name) written in javascript.
+[library](http  s://github.com/jzjzjzj/parse-torrent-name) written in 
+javascript.
 
-## Install
+Extract all possible media information present in filenames. Multiple regex 
+rules are applied on filename string each of which extracts correponding
+information from the filename. If a regex rule matches, the corresponding part
+is removed from the filename. In the end, the remaining part is taken as the
+title of the content.
 
-```sh
-$ easy_install parse-torrent-name
-```
+## Why?
 
-PTN can also be installed using `pip`.
+Online APIs by providers like
+[TMDb](https://www.themoviedb.org/documentation/api),
+[TVDb](http://thetvdb.com/wiki/index.php?title=Programmers_API) and
+[OMDb](http://www.omdbapi.com/) don't react to well to search
+queries which include any kind of extra information. To get proper results from
+these APIs, only the title of the content should be provided as the search
+query where this library comes into play. The accuracy of the results can be
+improved by passing in the year which can also be extracted using this library.
 
 ## Usage
 
@@ -74,6 +84,63 @@ PTN.parse('friends.s02e01.720p.bluray-sujaidr')
 #     'group': 'sujaidr',
 #     'quality': 'bluray'    
 # }
+```
+
+### Parts extracted
+
+* audio
+* codec
+* container
+* episode
+* episodeName
+* excess
+* extended
+* garbage
+* group
+* hardcoded
+* language
+* proper
+* quality
+* region
+* repack
+* resolution
+* season
+* title
+* website
+* widescreen
+* year
+
+## Install
+
+### Automatic
+
+PTN can be installed automatically using `easy_install` or `pip`.
+
+```sh
+$ easy_install parse-torrent-name
+```
+
+OR 
+
+```sh
+$ pip install parse-torrent-name
+```
+
+Note that these commands might require `sudo` permission depending on whether
+a virtual environment is used or not.
+
+### Manual
+
+First clone the repository.
+
+```sh
+$ git clone https://github.com/divijbindlish/parse-torrent-name PTN && cd PTN
+```
+
+And run the command for installing the package.
+
+```sh
+$ python setup.py install
 ```
 
 ## Contributing
