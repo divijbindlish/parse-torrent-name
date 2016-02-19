@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Parse-torrent-name by divijbindlish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Parse-torrent-name</h1>
+      <h2 class="project-tagline">Extract media information from a filename</h2>
+      <a href="https://github.com/divijbindlish/parse-torrent-name" class="btn">View on GitHub</a>
+      <a href="https://github.com/divijbindlish/parse-torrent-name/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/divijbindlish/parse-torrent-name/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="parse-torrent-name-" class="anchor" href="#parse-torrent-name-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>parse-torrent-name <img src="https://travis-ci.org/divijbindlish/parse-torrent-name.svg?branch=master" alt="Build Status">
+</h1>
+
+<blockquote>
+<p>Extract media information from a filename</p>
+</blockquote>
+
+<p>A python port of <a href="https://github.com/jzjzjzj">Jānis</a>' awesome
+library written in 
+javascript.</p>
+
+<p>Extract all possible media information present in filenames. Multiple regex 
+rules are applied on filename string each of which extracts correponding
+information from the filename. If a regex rule matches, the corresponding part
+is removed from the filename. In the end, the remaining part is taken as the
+title of the content.</p>
+
+<h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why?</h2>
+
+<p>Online APIs by providers like
+<a href="https://www.themoviedb.org/documentation/api">TMDb</a>,
+<a href="http://thetvdb.com/wiki/index.php?title=Programmers_API">TVDb</a> and
+<a href="http://www.omdbapi.com/">OMDb</a> don't react to well to search
+queries which include any kind of extra information. To get proper results from
+these APIs, only the title of the content should be provided as the search
+query where this library comes into play. The accuracy of the results can be
+improved by passing in the year which can also be extracted using this library.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> <span class="pl-c1">PTN</span>
+
+<span class="pl-c1">PTN</span>.parse(<span class="pl-s"><span class="pl-pds">'</span>A freakishly cool movie or TV episode<span class="pl-pds">'</span></span>)</pre></div>
+
+<p>PTN works well for both movies and TV episodes. All meaningful information is
+extracted and returned together in a dictionary. The text which could not be
+parsed is returned in the <code>excess</code> field.</p>
+
+<h3>
+<a id="movies" class="anchor" href="#movies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Movies</h3>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">PTN</span>.parse(<span class="pl-s"><span class="pl-pds">'</span>San Andreas 2015 720p WEB-DL x264 AAC-JYK<span class="pl-pds">'</span></span>)
+<span class="pl-c"># {</span>
+<span class="pl-c">#     'group': 'JYK',</span>
+<span class="pl-c">#     'title': 'San Andreas',</span>
+<span class="pl-c">#     'resolution': '720p',</span>
+<span class="pl-c">#     'codec': 'x264',</span>
+<span class="pl-c">#     'year':  '2015',</span>
+<span class="pl-c">#     'audio': 'AAC',</span>
+<span class="pl-c">#     'quality': 'WEB-DL'</span>
+<span class="pl-c"># }</span>
+
+<span class="pl-c1">PTN</span>.parse(<span class="pl-s"><span class="pl-pds">'</span>The Martian 2015 540p HDRip KORSUB x264 AAC2 0-FGT<span class="pl-pds">'</span></span>)
+<span class="pl-c"># {</span>
+<span class="pl-c">#     'group': '0-FGT',</span>
+<span class="pl-c">#     'title': 'The Martian',</span>
+<span class="pl-c">#     'resolution': '540p',</span>
+<span class="pl-c">#     'excess': ['KORSUB', '2'],</span>
+<span class="pl-c">#     'codec': 'x264',</span>
+<span class="pl-c">#     'year': 2015,</span>
+<span class="pl-c">#     'audio': 'AAC',</span>
+<span class="pl-c">#     'quality': 'HDRip'</span>
+<span class="pl-c"># }</span></pre></div>
+
+<h3>
+<a id="tv-episodes" class="anchor" href="#tv-episodes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TV episodes</h3>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">PTN</span>.parse(<span class="pl-s"><span class="pl-pds">'</span>Mr Robot S01E05 HDTV x264-KILLERS[ettv]<span class="pl-pds">'</span></span>)
+<span class="pl-c"># {</span>
+<span class="pl-c">#     'episode': 5,</span>
+<span class="pl-c">#     'season': 1,</span>
+<span class="pl-c">#     'title': 'Mr Robot',</span>
+<span class="pl-c">#     'codec': 'x264',</span>
+<span class="pl-c">#     'group':  'KILLERS[ettv]'</span>
+<span class="pl-c">#     'quality': 'HDTV'</span>
+<span class="pl-c"># }</span>
+
+<span class="pl-c1">PTN</span>.parse(<span class="pl-s"><span class="pl-pds">'</span>friends.s02e01.720p.bluray-sujaidr<span class="pl-pds">'</span></span>)
+<span class="pl-c"># {</span>
+<span class="pl-c">#     'episode': 1,</span>
+<span class="pl-c">#     'season': 2,</span>
+<span class="pl-c">#     'title': 'friends',</span>
+<span class="pl-c">#     'resolution': '720p',</span>
+<span class="pl-c">#     'group': 'sujaidr',</span>
+<span class="pl-c">#     'quality': 'bluray'    </span>
+<span class="pl-c"># }</span></pre></div>
+
+<h3>
+<a id="parts-extracted" class="anchor" href="#parts-extracted" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parts extracted</h3>
+
+<ul>
+<li>audio</li>
+<li>codec</li>
+<li>container</li>
+<li>episode</li>
+<li>episodeName</li>
+<li>excess</li>
+<li>extended</li>
+<li>garbage</li>
+<li>group</li>
+<li>hardcoded</li>
+<li>language</li>
+<li>proper</li>
+<li>quality</li>
+<li>region</li>
+<li>repack</li>
+<li>resolution</li>
+<li>season</li>
+<li>title</li>
+<li>website</li>
+<li>widescreen</li>
+<li>year</li>
+</ul>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<h3>
+<a id="automatic" class="anchor" href="#automatic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automatic</h3>
+
+<p>PTN can be installed automatically using <code>easy_install</code> or <code>pip</code>.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ easy_install parse-torrent-name</pre></div>
+
+<p>OR </p>
+
+<div class="highlight highlight-source-shell"><pre>$ pip install parse-torrent-name</pre></div>
+
+<p>Note that these commands might require <code>sudo</code> permission depending on whether
+a virtual environment is used or not.</p>
+
+<h3>
+<a id="manual" class="anchor" href="#manual" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual</h3>
+
+<p>First clone the repository.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/divijbindlish/parse-torrent-name PTN <span class="pl-k">&amp;&amp;</span> <span class="pl-c1">cd</span> PTN</pre></div>
+
+<p>And run the command for installing the package.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ python setup.py install</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Take a look at the open
+<a href="https://github.com/jzjzjzj/parse-torrent-name/issues">issues</a> on the original
+project and submit a PR!</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT © <a href="http://divijbindlish.com">Divij Bindlish</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/divijbindlish/parse-torrent-name">Parse-torrent-name</a> is maintained by <a href="https://github.com/divijbindlish">divijbindlish</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
