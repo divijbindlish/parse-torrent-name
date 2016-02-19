@@ -151,4 +151,4 @@ project and submit a PR!
 
 ## License
 
-MIT © [Divij Bindlish](http://divijbindlish.com)
+MIT © [Divij Bindlish](http://divijbindlish.in)
