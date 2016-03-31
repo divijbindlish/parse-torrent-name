@@ -22,7 +22,7 @@ class ParseTest(unittest.TestCase):
 
         for torrent, expected_result in zip(torrents, expected_results):
             result = PTN.parse(torrent)
-            self.assertItemsEqual(result, expected_result)
+            self.assertEqual(result, expected_result)
 
 
 if __name__ == '__main__':
