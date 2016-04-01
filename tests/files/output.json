@@ -372,7 +372,7 @@
     "codec": "x264",
     "group": "FoV [eztv]",
     "title": "The Missing",
-    "episodeName": "Pilot"
+    "excess": ["x0", "Pilot"]
   },
   {
     "season": 8,
@@ -408,10 +408,7 @@
     "audio": "AAC",
     "title": "The Shaukeens",
     "group": "Hon3y",
-    "excess": [
-      "Hindi",
-      "1CD"
-    ]
+    "excess": ["Hindi", "1CD"]
   },
   {
     "year": 2014,
@@ -419,10 +416,7 @@
     "codec": "x264",
     "title": "The Shaukeens",
     "group": "[DDR]",
-    "excess": [
-      "1CD",
-      "Rip"
-    ]
+    "excess": ["1CD", "Rip"]
   },
   {
     "year": 2014,
@@ -467,10 +461,7 @@
     "group": "RKOFAN1990 -={SPARR",
     "widescreen": true,
     "title": "WWE Monday Night Raw",
-    "excess": [
-      "11",
-      "10"
-    ]
+    "excess": ["11", "10"]
   },
   {
     "season": 1,
