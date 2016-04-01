@@ -54,7 +54,7 @@ class PTN:
         self.end = None
         self.title_raw = None
 
-        for key, pattern in patterns.iteritems():
+        for key, pattern in patterns:
             if key == 'codec':
                 match = re.findall(pattern, self.torrent['name'], re.I)
             else:
@@ -81,8 +81,9 @@ class PTN:
                     clean = int(clean)
 
             if key == 'group':
-                if re.search(patterns['codec'], clean, re.I) \
-                        or re.search(patterns['quality'], clean):
+                if re.search(patterns[5][1], clean, re.I) \
+                        or re.search(patterns[4][1], clean):
+                    # Codec and quality
                     continue
 
                 if re.match('[^ ]+ [^ ]+ .+', clean):
@@ -115,7 +116,8 @@ class PTN:
         match = re.split('\.\.+| +', clean)
         if len(match) > 0 and isinstance(match[0], tuple):
             match = list(match[0])
-        clean = filter(bool, match)
+
+        clean = [item for item in filter(bool, match)]
 
         if len(clean) != 0:
             groupPattern = clean[-1] + self.groupRaw
