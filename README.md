@@ -31,7 +31,9 @@ improved by passing in the year which can also be extracted using this library.
 ```py
 import PTN
 
-PTN.parse('A freakishly cool movie or TV episode')
+info = PTN.parse('A freakishly cool movie or TV episode')
+
+print info # All details that were parsed
 ```
 
 PTN works well for both movies and TV episodes. All meaningful information is
