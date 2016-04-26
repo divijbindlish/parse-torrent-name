@@ -1,10 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import re
-
 from .patterns import patterns, types
 
 
 class PTN:
-
     def _escapeRegex(self, string):
         return re.sub('[\-\[\]{}()*+?.,\\\^$|#\s]', '\\$&', string)
 
@@ -33,7 +33,6 @@ class PTN:
             # The instructions for adding excess
             if name == 'group':
                 self.groupRaw = raw
-
             if raw is not None:
                 self.excess_raw = self.excess_raw.replace(raw, '')
 
@@ -76,23 +75,18 @@ class PTN:
                 clean = True
             else:
                 clean = match[index['clean']]
-
                 if key in types.keys() and types[key] == 'integer':
                     clean = int(clean)
-
             if key == 'group':
                 if re.search(patterns[5][1], clean, re.I) \
                         or re.search(patterns[4][1], clean):
-                    # Codec and quality
-                    continue
-
+                    continue  # Codec and quality.
                 if re.match('[^ ]+ [^ ]+ .+', clean):
                     key = 'episodeName'
-
             if key == 'episode':
-                self.torrent['map'] = re.sub(match[index['raw']], '{episode}',
-                                             self.torrent['name'])
-
+                self.torrent['map'] = re.sub(
+                    match[index['raw']], '{episode}', self.torrent['name']
+                )
             self._part(key, match, match[index['raw']], clean)
 
         # Start process for title
@@ -101,10 +95,8 @@ class PTN:
             raw = raw[self.start:self.end].split('(')[0]
 
         clean = re.sub('^ -', '', raw)
-
         if clean.find(' ') == -1 and clean.find('.') != -1:
             clean = re.sub('\.', ' ', clean)
-
         clean = re.sub('_', ' ', clean)
         clean = re.sub('([\(_]|- )$', '', clean).strip()
 
@@ -118,7 +110,6 @@ class PTN:
             match = list(match[0])
 
         clean = [item for item in filter(bool, match)]
-
         if len(clean) != 0:
             groupPattern = clean[-1] + self.groupRaw
             if self.torrent['name'].find(groupPattern) == \
@@ -130,14 +121,11 @@ class PTN:
                     '{episode}'
                     '' + re.sub('_+$', '', clean[0])
                 )
-
                 if self.torrent['map'].find(episodeNamePattern) != -1:
                     self._late('episodeName', clean.pop(0))
 
         if len(clean) != 0:
             if len(clean) == 1:
                 clean = clean[0]
-
             self._part('excess', [], self.excess_raw, clean)
-
         return self.parts
