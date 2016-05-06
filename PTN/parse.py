@@ -4,7 +4,7 @@ import re
 from .patterns import patterns, types
 
 
-class PTN:
+class PTN(object):
     def _escapeRegex(self, string):
         return re.sub('[\-\[\]{}()*+?.,\\\^$|#\s]', '\\$&', string)
 
@@ -84,8 +84,9 @@ class PTN:
                 if re.match('[^ ]+ [^ ]+ .+', clean):
                     key = 'episodeName'
             if key == 'episode':
+                sub_pattern = self._escapeRegex(match[index['raw']])
                 self.torrent['map'] = re.sub(
-                    match[index['raw']], '{episode}', self.torrent['name']
+                    sub_pattern, '{episode}', self.torrent['name']
                 )
             self._part(key, match, match[index['raw']], clean)
 
