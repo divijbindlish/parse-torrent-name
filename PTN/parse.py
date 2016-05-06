@@ -5,13 +5,13 @@ from .patterns import patterns, types
 
 
 class PTN(object):
-    def _escapeRegex(self, string):
+    def _escape_regex(self, string):
         return re.sub('[\-\[\]{}()*+?.,\\\^$|#\s]', '\\$&', string)
 
     def __init__(self):
         self.torrent = None
         self.excess_raw = None
-        self.groupRaw = None
+        self.group_raw = None
         self.start = None
         self.end = None
         self.title_raw = None
@@ -32,7 +32,7 @@ class PTN(object):
         if name != 'excess':
             # The instructions for adding excess
             if name == 'group':
-                self.groupRaw = raw
+                self.group_raw = raw
             if raw is not None:
                 self.excess_raw = self.excess_raw.replace(raw, '')
 
@@ -48,7 +48,7 @@ class PTN(object):
         self.parts = {}
         self.torrent = {'name': name}
         self.excess_raw = name
-        self.groupRaw = ''
+        self.group_raw = ''
         self.start = 0
         self.end = None
         self.title_raw = None
@@ -84,7 +84,7 @@ class PTN(object):
                 if re.match('[^ ]+ [^ ]+ .+', clean):
                     key = 'episodeName'
             if key == 'episode':
-                sub_pattern = self._escapeRegex(match[index['raw']])
+                sub_pattern = self._escape_regex(match[index['raw']])
                 self.torrent['map'] = re.sub(
                     sub_pattern, '{episode}', self.torrent['name']
                 )
@@ -112,17 +112,17 @@ class PTN(object):
 
         clean = [item for item in filter(bool, match)]
         if len(clean) != 0:
-            groupPattern = clean[-1] + self.groupRaw
-            if self.torrent['name'].find(groupPattern) == \
-                    len(self.torrent['name']) - len(groupPattern):
-                self._late('group', clean.pop() + self.groupRaw)
+            group_pattern = clean[-1] + self.group_raw
+            if self.torrent['name'].find(group_pattern) == \
+                    len(self.torrent['name']) - len(group_pattern):
+                self._late('group', clean.pop() + self.group_raw)
 
             if 'map' in self.torrent.keys() and len(clean) != 0:
-                episodeNamePattern = (
+                episode_name_pattern = (
                     '{episode}'
                     '' + re.sub('_+$', '', clean[0])
                 )
-                if self.torrent['map'].find(episodeNamePattern) != -1:
+                if self.torrent['map'].find(episode_name_pattern) != -1:
                     self._late('episodeName', clean.pop(0))
 
         if len(clean) != 0:
