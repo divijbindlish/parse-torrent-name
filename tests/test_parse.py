@@ -19,7 +19,8 @@ class ParseTest(unittest.TestCase):
 
         for torrent, expected_result in zip(torrents, expected_results):
             result = PTN.parse(torrent)
-            self.assertEqual(result, expected_result)
+            for key in expected_result:
+                self.assertEqual(result[key], expected_result[key])
 
 if __name__ == '__main__':
     unittest.main()

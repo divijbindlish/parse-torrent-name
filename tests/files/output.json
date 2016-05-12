@@ -5,7 +5,6 @@
     "resolution": "720p",
     "quality": "HDTV",
     "codec": "x264",
-    "group": "ASAP[ettv]",
     "title": "The Walking Dead"
   },
   {
@@ -13,14 +12,12 @@
     "resolution": "1080p",
     "quality": "BrRip",
     "codec": "H264",
-    "group": "YIFY",
     "title": "Hercules"
   },
   {
     "year": 2014,
     "quality": "HDRip",
     "codec": "XViD",
-    "group": "EVO",
     "title": "Dawn of the Planet of the Apes"
   },
   {
@@ -28,7 +25,6 @@
     "episode": 6,
     "quality": "HDTV",
     "codec": "XviD",
-    "group": "LOL [eztv]",
     "title": "The Big Bang Theory"
   },
   {
@@ -36,7 +32,6 @@
     "resolution": "720p",
     "quality": "BrRip",
     "codec": "x264",
-    "group": "YIFY",
     "title": "22 Jump Street"
   },
   {
@@ -45,7 +40,6 @@
     "quality": "WEB-DL",
     "codec": "H264",
     "audio": "DD5.1",
-    "group": "RARBG",
     "extended": true,
     "title": "Hercules"
   },
@@ -53,7 +47,6 @@
     "year": 2014,
     "quality": "HDRip",
     "codec": "XViD",
-    "group": "juggs[ETRG]",
     "extended": true,
     "title": "Hercules"
   },
@@ -61,20 +54,17 @@
     "year": 2014,
     "quality": "WEBDL DVDRip",
     "codec": "XviD",
-    "group": "MAX",
     "title": "Hercules"
   },
   {
     "year": 2014,
     "quality": "PPV WEB-DL",
     "codec": "x264",
-    "group": "WD -={SPARROW}=-",
     "title": "WWE Hell in a Cell"
   },
   {
     "quality": "PPV.HDTV",
     "codec": "x264",
-    "group": "Ebi[rartv]",
     "title": "UFC 179"
   },
   {
@@ -82,7 +72,6 @@
     "episode": 5,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "KILLERS [eztv]",
     "title": "Marvels Agents of S H I E L D"
   },
   {
@@ -91,7 +80,6 @@
     "quality": "WEB-DL",
     "codec": "H264",
     "audio": "DD5.1",
-    "group": "RARBG",
     "title": "X-Men Days of Future Past"
   },
   {
@@ -99,7 +87,6 @@
     "resolution": "720p",
     "quality": "HDCAM",
     "codec": "x264",
-    "group": "JYK",
     "region": "R6",
     "title": "Guardians Of The Galaxy"
   },
@@ -109,16 +96,13 @@
     "resolution": "1080p",
     "quality": "WEB-DL",
     "audio": "DD5.1",
-    "group": "DL.DD5.1",
-    "title": "Marvel's Agents of S H I E L D",
-    "episodeName": "Shadows"
+    "title": "Marvel's Agents of S H I E L D"
   },
   {
     "season": 2,
     "episode": 6,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "KILLERS[ettv]",
     "title": "Marvels Agents of S.H.I.E.L.D."
   },
   {
@@ -133,7 +117,6 @@
     "quality": "WEB-DL",
     "codec": "H.264",
     "audio": "DD5.1",
-    "group": "Cyphanix[rartv]",
     "title": "The Walking Dead"
   },
   {
@@ -141,7 +124,6 @@
     "quality": "DVDRip",
     "codec": "XViD",
     "audio": "LiNE",
-    "group": "UNiQUE",
     "region": "R5",
     "title": "Brave"
   },
@@ -149,7 +131,6 @@
     "year": 2014,
     "quality": "BRRip",
     "codec": "XViD",
-    "group": "juggs[ETRG]",
     "title": "Lets Be Cops"
   },
   {
@@ -163,7 +144,6 @@
     "episode": 6,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "FoV [eztv]",
     "title": "Downton Abbey"
   },
   {
@@ -171,7 +151,6 @@
     "quality": "HDRip",
     "codec": "XViD",
     "audio": "AC3",
-    "group": "juggs[ETRG]",
     "hardcoded": true,
     "title": "Annabelle"
   },
@@ -179,7 +158,6 @@
     "year": 2014,
     "quality": "HDRip",
     "codec": "XViD",
-    "group": "juggs[ETRG]",
     "hardcoded": true,
     "title": "Lucy"
   },
@@ -189,7 +167,6 @@
     "year": 2014,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "FUM[ettv]",
     "title": "The Flash"
   },
   {
@@ -197,7 +174,6 @@
     "episode": 5,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "KILLERS [eztv]",
     "title": "South Park"
   },
   {
@@ -206,7 +182,6 @@
     "year": 2014,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "LOL[ettv]",
     "title": "The Flash"
   },
   {
@@ -215,14 +190,12 @@
     "year": 2014,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "LOL[ettv]",
     "title": "The Flash"
   },
   {
     "year": 2014,
     "quality": "WEBRip",
     "audio": "Dual-Audio",
-    "group": "1400Mb",
     "title": "Lucy"
   },
   {
@@ -232,15 +205,13 @@
   },
   {
     "year": 2014,
-    "title": "Teenage Mutant Ninja Turtles",
-    "excess": "unknown_release_type"
+    "title": "Teenage Mutant Ninja Turtles"
   },
   {
     "season": 26,
     "episode": 5,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "LOL [eztv]",
     "proper": true,
     "title": "The Simpsons"
   },
@@ -249,7 +220,6 @@
     "resolution": "720p",
     "quality": "BrRip",
     "codec": "x264",
-    "group": "YIFY",
     "title": "2047 - Sights of Death"
   },
   {
@@ -257,7 +227,6 @@
     "episode": 1,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "LOL [eztv]",
     "repack": true,
     "title": "Two and a Half Men"
   },
@@ -266,15 +235,13 @@
     "quality": "WEBrip",
     "codec": "XviD",
     "audio": "AC3",
-    "title": "Dinosaur 13",
-    "group": "MiLLENiUM"
+    "title": "Dinosaur 13"
   },
   {
     "year": 2014,
     "quality": "HDRip",
     "codec": "XviD",
     "audio": "MP3",
-    "group": "RARBG",
     "title": "Teenage Mutant Ninja Turtles"
   },
   {
@@ -283,7 +250,6 @@
     "quality": "WEB-DL",
     "codec": "H264",
     "audio": "DD51",
-    "group": "RARBG",
     "title": "Dawn Of The Planet of The Apes"
   },
   {
@@ -292,7 +258,6 @@
     "quality": "HDRip",
     "codec": "x264",
     "audio": "AC3.5.1",
-    "group": "RARBG",
     "title": "Teenage Mutant Ninja Turtles"
   },
   {
@@ -301,8 +266,7 @@
     "quality": "WEB-DL",
     "codec": "x264",
     "audio": "AAC",
-    "title": "Gotham",
-    "episodeName": "Viper"
+    "title": "Gotham"
   },
   {
     "year": 2014,
@@ -310,7 +274,6 @@
     "quality": "WEB-DL",
     "codec": "H264",
     "audio": "AAC2.0",
-    "group": "RARBG",
     "title": "Into The Storm"
   },
   {
@@ -326,7 +289,6 @@
     "quality": "TS",
     "codec": "x264",
     "audio": "DTS",
-    "group": "JYK",
     "title": "Into The Storm"
   },
   {
@@ -334,14 +296,12 @@
     "resolution": "1080p",
     "quality": "BluRay",
     "codec": "x264",
-    "group": "SPARKS",
     "title": "Sin City A Dame to Kill For"
   },
   {
     "year": 2014,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "Sir Paul",
     "title": "WWE Monday Night Raw 3rd Nov"
   },
   {
@@ -354,15 +314,13 @@
     "year": 2014,
     "quality": "HDTV",
     "codec": "x264",
-    "title": "WWE Hell in a Cell",
-    "group": "SNHD"
+    "title": "WWE Hell in a Cell"
   },
   {
     "year": 2014,
     "quality": "TS",
     "codec": "XViD",
     "audio": "AC3",
-    "group": "MrSeeN-SiMPLE",
     "title": "Dracula Untold"
   },
   {
@@ -370,9 +328,7 @@
     "episode": 1,
     "quality": "HDTV",
     "codec": "x264",
-    "group": "FoV [eztv]",
-    "title": "The Missing",
-    "excess": ["x0", "Pilot"]
+    "title": "The Missing"
   },
   {
     "season": 8,
@@ -381,9 +337,7 @@
     "resolution": "720p",
     "quality": "HDTV",
     "codec": "x264",
-    "group": "FoV[rartv]",
-    "title": "Doctor Who",
-    "episodeName": "Dark Water"
+    "title": "Doctor Who"
   },
   {
     "season": 1,
@@ -391,14 +345,12 @@
     "quality": "WEB-DL",
     "codec": "x264",
     "audio": "AAC",
-    "title": "Gotham",
-    "episodeName": "Penguins Umbrella"
+    "title": "Gotham"
   },
   {
     "year": 2014,
     "quality": "DVDRip",
     "codec": "XViD",
-    "group": "ViCKY",
     "title": "One Shot"
   },
   {
@@ -406,17 +358,13 @@
     "quality": "DvDScr",
     "codec": "x264",
     "audio": "AAC",
-    "title": "The Shaukeens",
-    "group": "Hon3y",
-    "excess": ["Hindi", "1CD"]
+    "title": "The Shaukeens"
   },
   {
     "year": 2014,
     "quality": "DvDScr",
     "codec": "x264",
-    "title": "The Shaukeens",
-    "group": "[DDR]",
-    "excess": ["1CD", "Rip"]
+    "title": "The Shaukeens"
   },
   {
     "year": 2014,
@@ -424,7 +372,6 @@
     "quality": "WEBRip",
     "codec": "x264",
     "audio": "AAC.2.0",
-    "group": "RARBG",
     "hardcoded": true,
     "proper": true,
     "title": "Annabelle"
@@ -434,9 +381,7 @@
     "quality": "CAM",
     "codec": "x264",
     "audio": "AAC",
-    "group": "CPG",
-    "title": "Interstellar",
-    "excess": "ENG"
+    "title": "Interstellar"
   },
   {
     "year": 2014,
@@ -458,10 +403,8 @@
     "year": 2014,
     "quality": "PDTV",
     "codec": "x264",
-    "group": "RKOFAN1990 -={SPARR",
     "widescreen": true,
-    "title": "WWE Monday Night Raw",
-    "excess": ["11", "10"]
+    "title": "WWE Monday Night Raw"
   },
   {
     "season": 1,
@@ -475,9 +418,7 @@
     "resolution": "720p",
     "quality": "hdtv",
     "codec": "x264",
-    "group": "fov",
-    "title": "doctor who",
-    "episodeName": "death in heaven"
+    "title": "doctor who"
   },
   {
     "season": 1,
@@ -485,13 +426,11 @@
     "resolution": "720p",
     "quality": "bluray",
     "codec": "x264",
-    "group": "reward",
     "title": "breaking bad"
   },
   {
     "season": 4,
     "episode": 3,
-    "episodeName": "Breaker of Chains",
     "title": "Game of Thrones"
   },
   {
@@ -500,7 +439,6 @@
     "resolution": "480p",
     "quality": "BluRay",
     "codec": "x264",
-    "group": "GAnGSteR",
     "website": "720pMkv.Com",
     "title": "sons of anarchy"
   },
@@ -510,7 +448,6 @@
     "resolution": "720p",
     "quality": "HDTV",
     "codec": "X264",
-    "group": "DIMENSION",
     "website": "www.Speed.cd",
     "title": "Sons of Anarchy"
   },
@@ -519,7 +456,6 @@
     "episode": 20,
     "resolution": "720p",
     "language": "rus.eng",
-    "title": "Community",
-    "group": "Kybik.v.Kybe"
+    "title": "Community"
   }
 ]
