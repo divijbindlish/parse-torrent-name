@@ -11,7 +11,7 @@ setup(
     author_email=__import__('PTN').__email__,
     license=__import__('PTN').__license__,
     url='https://github.com/divijbindlish/parse-torrent-name',
-    description='Parse torrent name of a movie or TV show',
+    description='Extract media information from torrent-like filename',
     long_description=description,
     packages=['PTN'],
     keywords=('parse parser torrent torrents name names proper rename '
