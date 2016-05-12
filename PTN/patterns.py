@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 patterns = [
     ('season', '([Ss]?([0-9]{1,2}))[Eex]'),
     ('episode', '([Eex]([0-9]{2})(?:[^0-9]|$))'),

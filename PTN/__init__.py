@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from .parse import PTN
 
 __author__ = 'Divij Bindlish'
