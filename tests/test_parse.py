@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import json
 import os
 import unittest
@@ -6,24 +8,18 @@ import PTN
 
 
 class ParseTest(unittest.TestCase):
-
     def test_parser(self):
-        with open(os.path.join(
-                os.path.dirname(__file__),
-                'files/input.json'
-                )) as input_file:
+        json_input = os.path.join(os.path.dirname(__file__), 'files/input.json')
+        with open(json_input) as input_file:
             torrents = json.load(input_file)
 
-        with open(os.path.join(
-                os.path.dirname(__file__),
-                'files/output.json'
-                )) as output_file:
+        json_output = os.path.join(os.path.dirname(__file__), 'files/output.json')
+        with open(json_output) as output_file:
             expected_results = json.load(output_file)
 
         for torrent, expected_result in zip(torrents, expected_results):
             result = PTN.parse(torrent)
             self.assertEqual(result, expected_result)
-
 
 if __name__ == '__main__':
     unittest.main()
