@@ -1,6 +1,6 @@
 # parse-torrent-name ![Build status](https://travis-ci.org/divijbindlish/parse-torrent-name.svg?branch=master)
 
-> Extract media information from a filename
+> Extract media information from torrent-like filename
 
 ![Python versions](https://img.shields.io/badge/Python-2.7%2C%203.3-brightgreen.svg?style=flat-square)
 ![Downloads](https://img.shields.io/pypi/dm/parse-torrent-name.svg?style=flat-square)
@@ -90,6 +90,13 @@ PTN.parse('friends.s02e01.720p.bluray-sujaidr')
 #     'quality': 'bluray'    
 # }
 ```
+
+### Note
+
+PTN does not gaurantee the fields `group`, `excess` and `episodeName` as these 
+fields might be interchanged with each other. This shoudn't affect most 
+applications since episode name can be fetched from an online database 
+after getting the season and episode number correctly.
 
 ### Parts extracted
 
