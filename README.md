@@ -3,7 +3,6 @@
 > Extract media information from torrent-like filename
 
 ![Python versions](https://img.shields.io/badge/Python-2.7%2C%203.3-brightgreen.svg?style=flat-square)
-![Downloads](https://img.shields.io/pypi/dm/parse-torrent-name.svg?style=flat-square)
 
 A python port of [Jānis](https://github.com/jzjzjzj)' awesome
 [library](http  s://github.com/jzjzjzj/parse-torrent-name) written in 
