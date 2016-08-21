@@ -55,10 +55,15 @@ class PTN(object):
         self.title_raw = None
 
         for key, pattern in patterns:
+            if key not in ('season', 'episode', 'website'):
+                pattern = r'\b%s\b' % pattern
+
+            clean_name = re.sub('_', ' ', self.torrent['name'])
+
             if key == 'codec':
-                match = re.findall(pattern, self.torrent['name'], re.I)
+                match = re.findall(pattern, clean_name, re.I)
             else:
-                match = re.findall(pattern, self.torrent['name'])
+                match = re.findall(pattern, clean_name)
             if len(match) == 0:
                 continue
 
@@ -100,7 +105,7 @@ class PTN(object):
         if clean.find(' ') == -1 and clean.find('.') != -1:
             clean = re.sub('\.', ' ', clean)
         clean = re.sub('_', ' ', clean)
-        clean = re.sub('([\(_]|- )$', '', clean).strip()
+        clean = re.sub('([\[\(_]|- )$', '', clean).strip()
 
         self._part('title', [], raw, clean)
 

@@ -19,8 +19,10 @@ class ParseTest(unittest.TestCase):
             expected_results = json.load(output_file)
 
         for torrent, expected_result in zip(torrents, expected_results):
+            print("Test: " + torrent)
             result = PTN.parse(torrent)
             for key in expected_result:
+                self.assertIn(key, result)
                 self.assertEqual(result[key], expected_result[key])
 
 if __name__ == '__main__':
