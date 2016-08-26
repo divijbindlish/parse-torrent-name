@@ -59,11 +59,7 @@ class PTN(object):
                 pattern = r'\b%s\b' % pattern
 
             clean_name = re.sub('_', ' ', self.torrent['name'])
-
-            if key == 'codec':
-                match = re.findall(pattern, clean_name, re.I)
-            else:
-                match = re.findall(pattern, clean_name)
+            match = re.findall(pattern, clean_name, re.I)
             if len(match) == 0:
                 continue
 
