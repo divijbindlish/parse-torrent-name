@@ -14,7 +14,7 @@ patterns = [
                '?|AC3(?:\.5\.1)?)')),
     ('group', '(- ?([^-]+(?:-={[^-]+-?$)?))$'),
     ('region', 'R[0-9]'),
-    ('extended', 'EXTENDED'),
+    ('extended', '(EXTENDED(:?.CUT)?)'),
     ('hardcoded', 'HC'),
     ('proper', 'PROPER'),
     ('repack', 'REPACK'),
