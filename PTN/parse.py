@@ -106,13 +106,14 @@ class PTN(object):
         self._part('title', [], raw, clean)
 
         # Start process for end
-        clean = re.sub('(^[-\. ]+)|([-\. ]+$)', '', self.excess_raw)
+        clean = re.sub('(^[-\. ()]+)|([-\. ]+$)', '', self.excess_raw)
         clean = re.sub('[\(\)\/]', ' ', clean)
         match = re.split('\.\.+| +', clean)
         if len(match) > 0 and isinstance(match[0], tuple):
             match = list(match[0])
 
         clean = [item for item in filter(bool, match)]
+        clean = [item for item in filter(lambda a: a != '-', clean)]
         if len(clean) != 0:
             group_pattern = clean[-1] + self.group_raw
             if self.torrent['name'].find(group_pattern) == \
