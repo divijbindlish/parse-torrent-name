@@ -12,6 +12,7 @@
     "resolution": "1080p",
     "quality": "BrRip",
     "codec": "H264",
+    "excess": "",
     "title": "Hercules"
   },
   {
@@ -48,6 +49,7 @@
     "quality": "HDRip",
     "codec": "XViD",
     "extended": true,
+    "excess": "",
     "title": "Hercules"
   },
   {
@@ -465,5 +467,21 @@
   {
     "title": "Ant-Man",
     "sbs": "Half-SBS"
+  },
+  {
+    "title": "Ice Age Collision Course",
+    "quality": "HDRIP"
+  },
+  {
+    "title": "Red Sonja Queen Of Plagues",
+    "quality": "BDRip"
+  },
+  {
+    "title": "The Purge: Election Year",
+    "excess": "900MB"
+  },
+  {
+    "title": "War Dogs",
+    "audio": "HDTS"
   }
 ]
