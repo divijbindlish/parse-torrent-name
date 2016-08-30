@@ -483,5 +483,9 @@
   {
     "title": "War Dogs",
     "audio": "HDTS"
+  },
+  {
+    "title": "The Hateful Eight",
+    "codec": "x265"
   }
 ]

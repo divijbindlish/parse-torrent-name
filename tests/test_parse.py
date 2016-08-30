@@ -30,5 +30,6 @@ class ParseTest(unittest.TestCase):
                     self.assertIn(key, result)
                     self.assertEqual(result[key], expected_result[key])
 
+
 if __name__ == '__main__':
     unittest.main()
