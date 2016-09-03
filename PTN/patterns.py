@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 
 patterns = [
-    ('season', '([Ss]?([0-9]{1,2}))[Eex]'),
-    ('episode', '([Eex]([0-9]{2})(?:[^0-9]|$))'),
+    ('season', '(s?([0-9]{1,2}))[ex]'),
+    ('episode', '([ex]([0-9]{2})(?:[^0-9]|$))'),
     ('year', '([\[\(]?((?:19[0-9]|20[01])[0-9])[\]\)]?)'),
     ('resolution', '([0-9]{3,4}p)'),
-    ('quality', ('((?:PPV\.)?[HP]DTV|(?:HD)?CAM|B[rR]Rip|TS|(?:PPV '
-                 ')?WEB-?DL(?: DVDRip)?|H[dD]Rip|DVDRip|DVDRiP|DVDR'
-                 'IP|CamRip|W[EB]B[rR]ip|[Bb]lu[Rr]ay|DvDScr|hdtv)')),
-    ('codec', 'xvid|x264|h\.?264'),
-    ('audio', ('MP3|DD5\.?1|Dual[\- ]Audio|LiNE|DTS|AAC(?:\.?2\.0)'
-               '?|AC3(?:\.5\.1)?')),
+    ('quality', ('((?:PPV\.)?[HP]DTV|(?:HD)?CAM|B[DR]Rip|TS|(?:PPV '
+                 ')?WEB-?DL(?: DVDRip)?|HDRip|DVDRip|DVDR'
+                 'IP|CamRip|W[EB]BRip|BluRay|DvDScr|hdtv)')),
+    ('codec', '(xvid|[hx]\.?26[45])'),
+    ('audio', ('(MP3|DD5\.?1|Dual[\- ]Audio|LiNE|H?DTS|AAC(?:\.?2\.0)'
+               '?|AC3(?:\.5\.1)?)')),
     ('group', '(- ?([^-]+(?:-={[^-]+-?$)?))$'),
     ('region', 'R[0-9]'),
-    ('extended', 'EXTENDED'),
+    ('extended', '(EXTENDED(:?.CUT)?)'),
     ('hardcoded', 'HC'),
     ('proper', 'PROPER'),
     ('repack', 'REPACK'),

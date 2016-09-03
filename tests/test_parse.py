@@ -24,8 +24,12 @@ class ParseTest(unittest.TestCase):
             print("Test: " + torrent)
             result = PTN.parse(torrent)
             for key in expected_result:
-                self.assertIn(key, result)
-                self.assertEqual(result[key], expected_result[key])
+                if not expected_result[key]:
+                    self.assertNotIn(key, result)
+                else:
+                    self.assertIn(key, result)
+                    self.assertEqual(result[key], expected_result[key])
+
 
 if __name__ == '__main__':
     unittest.main()
