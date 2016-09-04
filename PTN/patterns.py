@@ -18,7 +18,7 @@ patterns = [
     ('hardcoded', 'HC'),
     ('proper', 'PROPER'),
     ('repack', 'REPACK'),
-    ('container', '(MKV|AVI)'),
+    ('container', '(MKV|AVI|MP4)'),
     ('widescreen', 'WS'),
     ('website', '^(\[ ?([^\]]+?) ?\])'),
     ('language', 'rus\.eng'),
