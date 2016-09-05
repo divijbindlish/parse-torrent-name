@@ -23,6 +23,7 @@ patterns = [
     ('website', '^(\[ ?([^\]]+?) ?\])'),
     ('language', 'rus\.eng'),
     ('sbs', '(?:Half-)?SBS'),
+    ('unrated', 'UNRATED'),
 ]
 
 types = {
@@ -33,5 +34,6 @@ types = {
     'hardcoded': 'boolean',
     'proper': 'boolean',
     'repack': 'boolean',
-    'widescreen': 'boolean'
+    'widescreen': 'boolean',
+    'unrated': 'boolean'
 }
