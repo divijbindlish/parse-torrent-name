@@ -24,6 +24,7 @@ patterns = [
     ('language', 'rus\.eng'),
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
+    ('size', '(\d+(?:\.\d+)?(?:GB|MB))')
 ]
 
 types = {
