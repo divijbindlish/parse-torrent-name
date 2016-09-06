@@ -28,7 +28,10 @@ class ParseTest(unittest.TestCase):
                     self.assertNotIn(key, result)
                 else:
                     self.assertIn(key, result)
-                    self.assertEqual(result[key], expected_result[key])
+                    result1 = result[key]
+                    if key == 'excess' and type(result1) == list:
+                        result1 = ', '.join(result1)
+                    self.assertEqual(result1, expected_result[key])
 
 
 if __name__ == '__main__':
