@@ -25,7 +25,8 @@ patterns = [
     ('language', '(rus\.eng|ita\.eng)'),
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
-    ('size', '(\d+(?:\.\d+)?(?:GB|MB))')
+    ('size', '(\d+(?:\.\d+)?(?:GB|MB))'),
+    ('3d', '3D')
 ]
 
 types = {
@@ -37,5 +38,6 @@ types = {
     'proper': 'boolean',
     'repack': 'boolean',
     'widescreen': 'boolean',
-    'unrated': 'boolean'
+    'unrated': 'boolean',
+    '3d': 'boolean'
 }

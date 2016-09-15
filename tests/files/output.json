@@ -461,12 +461,14 @@
     "title": "Community"
   },
   {
-    "title": "The Jungle Book 3D",
-    "sbs": "SBS"
+    "title": "The Jungle Book",
+    "sbs": "SBS",
+    "3d": true
   },
   {
     "title": "Ant-Man",
-    "sbs": "Half-SBS"
+    "sbs": "Half-SBS",
+    "3d": true
   },
   {
     "title": "Ice Age Collision Course",
