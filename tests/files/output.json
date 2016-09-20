@@ -461,12 +461,14 @@
     "title": "Community"
   },
   {
-    "title": "The Jungle Book 3D",
-    "sbs": "SBS"
+    "title": "The Jungle Book",
+    "sbs": "SBS",
+    "3d": true
   },
   {
     "title": "Ant-Man",
-    "sbs": "Half-SBS"
+    "sbs": "Half-SBS",
+    "3d": true
   },
   {
     "title": "Ice Age Collision Course",
@@ -478,14 +480,36 @@
   },
   {
     "title": "The Purge: Election Year",
-    "excess": "900MB"
+    "size": "900MB"
   },
   {
     "title": "War Dogs",
-    "audio": "HDTS"
+    "quality": "HDTS",
+    "size": "600MB"
   },
   {
     "title": "The Hateful Eight",
-    "codec": "x265"
+    "codec": "x265",
+    "size": "999MB"
+  },
+  {
+    "title": "The Boss",
+    "unrated": true
+  },
+  {
+    "title": "Return To Snowy River",
+    "group": "W4F[PRiME]"
+  },
+  {
+    "title": "Akira",
+    "excess": "UpScaled, DesiSCR-Rip, Hindi, 5.1, Mafiaking"
+  },
+  {
+    "title": "Ben Hur",
+    "quality": "TELESYNC"
+  },
+  {
+    "title": "The Secret Life of Pets",
+    "audio": "AAC-LC"
   }
 ]
