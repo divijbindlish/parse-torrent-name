@@ -17,6 +17,12 @@ setup(
     description='Extract media information from torrent-like filename',
     long_description=description,
     packages=['PTN'],
+    entry_points = {
+        "console_scripts": ['parse-torrent-name = PTN.parseTorrentName:main']
+    },
+    install_requires=[
+        "argparse"
+    ],
     keywords=('parse parser torrent torrents name names proper rename '
               'movie movies tv show shows series extract find quality '
               'group codec audio resolution title season episode year '
