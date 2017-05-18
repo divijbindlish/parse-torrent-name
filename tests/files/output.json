@@ -511,5 +511,12 @@
   {
     "title": "The Secret Life of Pets",
     "audio": "AAC-LC"
+  },
+  {
+    "season": 4,
+    "episode": 4,
+    "resolution": "1080p",
+    "codec": "h264",
+    "title": "Silicon Valley"
   }
 ]

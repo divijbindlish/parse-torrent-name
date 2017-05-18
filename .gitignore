@@ -5,3 +5,6 @@ dist/
 env/
 
 *.pyc
+
+*.swp
+*.swo
