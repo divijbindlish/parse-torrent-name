@@ -98,6 +98,7 @@ class PTN(object):
             raw = raw[self.start:self.end].split('(')[0]
 
         clean = re.sub('^ -', '', raw)
+        clean = re.sub('www.*.* ', '', clean)
         if clean.find(' ') == -1 and clean.find('.') != -1:
             clean = re.sub('\.', ' ', clean)
         clean = re.sub('_', ' ', clean)
