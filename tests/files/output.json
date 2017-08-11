@@ -502,7 +502,7 @@
   },
   {
     "title": "Akira",
-    "excess": "UpScaled, DesiSCR-Rip, Hindi, 5.1, Mafiaking"
+    "excess": ["UpScaled", "DesiSCR-Rip", "Hindi", "5.1", "Mafiaking"]
   },
   {
     "title": "Ben Hur",
@@ -511,5 +511,38 @@
   {
     "title": "The Secret Life of Pets",
     "audio": "AAC-LC"
+  },
+  {
+    "title": "The X-Files",
+    "season": 1,
+    "subtitles": "DKsubs",
+    "resolution": "720p",
+    "quality": "BluRay",
+    "codec": "x264",
+    "group": "RAPiDCOWS"
+  },
+  {
+    "title": "The X-Files",
+    "season": [1, 2, 3],
+    "resolution": "1080p",
+    "quality": "BluRay",
+    "codec": "x265"
+  },
+  {
+    "title": "The X-Files",
+    "season": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "resolution": "1080p",
+    "quality": "BluRay",
+    "codec": "x264",
+    "group": "GECKOS"
+  },
+  {
+    "title": "The Flash",
+    "year": 2014,
+    "season": 3,
+    "resolution": "720p",
+    "quality": "HDTV",
+    "codec": "x264",
+    "group": "Scene"
   }
 ]
