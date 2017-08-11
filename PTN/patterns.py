@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 patterns = [
-    ('season', '(s?([0-9]{1,2}))[ex]'),
+    ('season', '((?:Complete.)?s[0-9]{2}-s[0-9]{2}|s([0-9]{1,2})|([0-9]{1,2})x[0-9]{2})'),
     ('episode', '([ex]([0-9]{2})(?:[^0-9]|$))'),
     ('year', '([\[\(]?((?:19[0-9]|20[01])[0-9])[\]\)]?)'),
     ('resolution', '([0-9]{3,4}p)'),
@@ -23,6 +23,7 @@ patterns = [
     ('widescreen', 'WS'),
     ('website', '^(\[ ?([^\]]+?) ?\])'),
     ('language', '(rus\.eng|ita\.eng)'),
+    ('subtitles', '(DKsubs)'),
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
     ('size', '(\d+(?:\.\d+)?(?:GB|MB))'),
