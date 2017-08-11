@@ -143,6 +143,14 @@ class PTN(object):
                 if self.torrent['map'].find(episode_name_pattern) != -1:
                     self._late('episodeName', clean.pop(0))
 
+        # clean group name from having a container name
+        if 'group' in self.parts and 'container' in self.parts:
+            group = self.parts['group']
+            container = self.parts['container']
+            if group.lower().endswith('.'+container.lower()):
+                group = group[:-(len(container)+1)]
+                self.parts['group'] = group
+
         if len(clean) != 0:
             if len(clean) == 1:
                 clean = clean[0]
