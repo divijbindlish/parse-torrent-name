@@ -44,3 +44,5 @@ types = {
     'unrated': 'boolean',
     '3d': 'boolean'
 }
+
+bt_sites = ['eztv', 'ettv', 'rarbg', 'rartv', 'ETRG']

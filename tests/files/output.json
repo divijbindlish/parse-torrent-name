@@ -5,7 +5,8 @@
     "resolution": "720p",
     "quality": "HDTV",
     "codec": "x264",
-    "title": "The Walking Dead"
+    "title": "The Walking Dead",
+    "group": "ASAP"
   },
   {
     "year": 2014,
@@ -50,7 +51,8 @@
     "codec": "XViD",
     "extended": true,
     "excess": "",
-    "title": "Hercules"
+    "title": "Hercules",
+    "group": "juggs"
   },
   {
     "year": 2014,
@@ -119,7 +121,8 @@
     "quality": "WEB-DL",
     "codec": "H.264",
     "audio": "DD5.1",
-    "title": "The Walking Dead"
+    "title": "The Walking Dead",
+    "group": "Cyphanix"
   },
   {
     "year": 2012,

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import re
-from .patterns import patterns, types
+from .patterns import patterns, types, bt_sites
 
 
 class PTN(object):
@@ -149,6 +149,16 @@ class PTN(object):
             container = self.parts['container']
             if group.lower().endswith('.'+container.lower()):
                 group = group[:-(len(container)+1)]
+                self.parts['group'] = group
+
+        # clean group name from having bt site name
+        if 'group' in self.parts:
+
+            group = self.parts['group']
+            sites = '|'.join(bt_sites)
+            pat = '\[(' + sites + ')\]$'
+            group = re.sub(pat, '', group, flags=re.I)
+            if group:
                 self.parts['group'] = group
 
         if len(clean) != 0:
