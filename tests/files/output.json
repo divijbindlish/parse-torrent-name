@@ -555,5 +555,15 @@
     "resolution": "1280X720",
     "container": "mp4",
     "group": "ZhuixinFan"
+  },
+  {
+    "title": "Blind",
+    "year": 2017,
+    "language": "NORDiC",
+    "quality": "BluRay",
+    "resolution": "720p",
+    "codec": "x264",
+    "audio": "DTS5.1",
+    "group": "TWA"
   }
 ]

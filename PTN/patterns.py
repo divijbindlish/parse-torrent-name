@@ -24,7 +24,7 @@ patterns = [
     ('container', '(MKV|AVI|MP4)'),
     ('widescreen', 'WS'),
     ('website', '^(\[ ?([^\]]+?) ?\])'),
-    ('language', '(rus\.eng|ita\.eng)'),
+    ('language', '(rus\.eng|ita\.eng|nordic)'),
     ('subtitles', '(DKsubs)'),
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
