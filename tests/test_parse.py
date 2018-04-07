@@ -4,6 +4,10 @@
 import json
 import os
 import unittest
+import sys
+
+# Force using PTN relative to this test file
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir))
 
 import PTN
 
