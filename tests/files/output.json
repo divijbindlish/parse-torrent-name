@@ -511,5 +511,35 @@
   {
     "title": "The Secret Life of Pets",
     "audio": "AAC-LC"
+  },
+  {
+    "group": "SORNY",
+    "title": "Jimmy Fallon",
+    "resolution": "720p",
+    "codec": "x264",
+    "year": 2018,
+    "month": 4,
+    "day": 6,
+    "quality": "HDTV"
+  },
+  {
+    "group": "CBFM",
+    "title": "The Footy Show AFL",
+    "codec": "x264",
+    "year": 2018,
+    "month": 3,
+    "day": 21,
+    "quality": "HDTV"
+  },
+  {
+    "group": "PLUTONiUM",
+    "title": "NRL",
+    "resolution": "1080p",
+    "codec": "x264",
+    "year": 2018,
+    "month": 4,
+    "day": 6,
+    "quality": "HDTV"
   }
+
 ]

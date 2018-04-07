@@ -26,13 +26,17 @@ patterns = [
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
     ('size', '(\d+(?:\.\d+)?(?:GB|MB))'),
-    ('3d', '3D')
+    ('3d', '3D'),
+    ('month', '[\[\(]?(?:19[0-9]|20[01])[0-9][\]\)]?[\.|\s]?(\d{2})[\.|\s]?\d{2}'),
+    ('day', '[\[\(]?(?:19[0-9]|20[01])[0-9][\]\)]?[\.|\s]?\d{2}[\.|\s]?(\d{2})')
 ]
 
 types = {
     'season': 'integer',
     'episode': 'integer',
     'year': 'integer',
+    'month': 'integer',
+    'day': 'integer',
     'extended': 'boolean',
     'hardcoded': 'boolean',
     'proper': 'boolean',
