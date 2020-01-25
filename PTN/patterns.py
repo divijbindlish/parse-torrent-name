@@ -4,7 +4,7 @@
 patterns = [
     ('season', '(s?([0-9]{1,2}))[ex]'),
     ('episode', '([ex]([0-9]{2})(?:[^0-9]|$))'),
-    ('year', '([\[\(]?((?:19[0-9]|20[01])[0-9])[\]\)]?)'),
+    ('year', '([\[\(]?((?:19[0-9]|20[0-2])[0-9])[\]\)]?)'),
     ('resolution', '([0-9]{3,4}p)'),
     ('quality', ('((?:PPV\.)?[HP]DTV|(?:HD)?CAM|B[DR]Rip|(?:HD-?)?TS|'
                  '(?:PPV )?WEB-?DL(?: DVDRip)?|HDRip|DVDRip|DVDRIP|'
@@ -26,13 +26,17 @@ patterns = [
     ('sbs', '(?:Half-)?SBS'),
     ('unrated', 'UNRATED'),
     ('size', '(\d+(?:\.\d+)?(?:GB|MB))'),
-    ('3d', '3D')
+    ('3d', '3D'),
+    ('month', '(?=(?:[0-9]{4})[\-\.](?P<month>1[0-2]|0[1-9])[\-\.])'),
+    ('day', '(?=(?:[0-9]{4})[\-\.](?P<month>1[0-2]|0[1-9])[\-\.](?P<date>3[01]|0[1-9]|[12][0-9]))')
 ]
 
 types = {
     'season': 'integer',
     'episode': 'integer',
     'year': 'integer',
+    'month': 'integer',
+    'day': 'integer',
     'extended': 'boolean',
     'hardcoded': 'boolean',
     'proper': 'boolean',

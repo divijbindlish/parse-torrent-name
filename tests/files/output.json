@@ -1,4 +1,23 @@
 [
+   {
+    "extended": true,
+    "group": "XLF",
+    "title": "The Daily Show",
+    "month": 1,
+    "codec": "x264",
+    "year": 2020,
+    "resolution": "720p",
+    "day": 23
+  },
+  {
+    "group": "TRUMP",
+    "title": "Stephen Colbert",
+    "month": 1,
+    "codec": "x264",
+    "year": 2020,
+    "resolution": "720p",
+    "day": 23
+  },
   {
     "season": 5,
     "episode": 3,
