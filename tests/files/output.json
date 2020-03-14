@@ -511,5 +511,13 @@
   {
     "title": "The Secret Life of Pets",
     "audio": "AAC-LC"
+  },
+  {
+    "title": "Redemption",
+    "year": 2020,
+    "resolution": "1080p",
+    "quality": "WEB-DL",
+    "codec": "H264",
+    "audio": "AC3"
   }
 ]
