@@ -58,6 +58,9 @@ class PTN(object):
             if key not in ('season', 'episode', 'website', 'year'):
                 pattern = r'\b%s\b' % pattern
 
+            if key == 'year':
+                 pattern = r'.%s' % pattern
+
             clean_name = re.sub('_', ' ', self.torrent['name'])
             match = re.findall(pattern, clean_name, re.I)
             if len(match) == 0:
