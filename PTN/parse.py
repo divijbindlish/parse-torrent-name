@@ -55,8 +55,11 @@ class PTN(object):
         self.title_raw = None
 
         for key, pattern in patterns:
-            if key not in ('season', 'episode', 'website'):
+            if key not in ('season', 'episode', 'website', 'year'):
                 pattern = r'\b%s\b' % pattern
+
+            if key == 'year':
+                 pattern = r'.%s' % pattern
 
             clean_name = re.sub('_', ' ', self.torrent['name'])
             match = re.findall(pattern, clean_name, re.I)
@@ -64,6 +67,8 @@ class PTN(object):
                 continue
 
             index = {}
+            if key == 'year' and len(match) > 1:
+                match = [m for m in match if m[0].startswith('(')] or match
             if isinstance(match[0], tuple):
                 match = list(match[0])
             if len(match) > 1:
