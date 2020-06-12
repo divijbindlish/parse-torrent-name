@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import re
-from .patterns import patterns, types
+from .patterns import patterns, types, bt_sites
 
 
 class PTN(object):
@@ -58,6 +58,10 @@ class PTN(object):
             if key not in ('season', 'episode', 'website'):
                 pattern = r'\b%s\b' % pattern
 
+            # year cannot be first so look for another char
+            if key == 'year':
+                pattern = r'.%s' % pattern
+
             clean_name = re.sub('_', ' ', self.torrent['name'])
             match = re.findall(pattern, clean_name, re.I)
             if len(match) == 0:
@@ -68,20 +72,33 @@ class PTN(object):
                 match = list(match[0])
             if len(match) > 1:
                 index['raw'] = 0
-                index['clean'] = 1
+                index['clean'] = 0
+                # for season we might have it in index 1 or index 2
+                # i.e. "5x09"
+                for i in range(1, len(match)):
+                    if match[i]:
+                        index['clean'] = i
+                        break
             else:
                 index['raw'] = 0
                 index['clean'] = 0
 
-            if key in types.keys() and types[key] == 'boolean':
+            if key == 'season' and index['clean'] == 0:
+                # handle multi season
+                # i.e. S01-S09
+                m = re.findall('s([0-9]{2})-s([0-9]{2})', clean_name, re.I)
+                if m:
+                    clean = list(range(int(m[0][0]), int(m[0][1])+1))
+            elif key in types.keys() and types[key] == 'boolean':
                 clean = True
             else:
                 clean = match[index['clean']]
                 if key in types.keys() and types[key] == 'integer':
                     clean = int(clean)
+
             if key == 'group':
-                if re.search(patterns[5][1], clean, re.I) \
-                        or re.search(patterns[4][1], clean):
+                if (re.search(patterns[5][1], clean, re.I) or
+                    re.search(patterns[4][1], clean)):
                     continue  # Codec and quality.
                 if re.match('[^ ]+ [^ ]+ .+', clean):
                     key = 'episodeName'
@@ -102,6 +119,7 @@ class PTN(object):
             clean = re.sub('\.', ' ', clean)
         clean = re.sub('_', ' ', clean)
         clean = re.sub('([\[\(_]|- )$', '', clean).strip()
+        clean = clean.strip(' _-')
 
         self._part('title', [], raw, clean)
 
@@ -128,6 +146,24 @@ class PTN(object):
                 )
                 if self.torrent['map'].find(episode_name_pattern) != -1:
                     self._late('episodeName', clean.pop(0))
+
+        # clean group name from having a container name
+        if 'group' in self.parts and 'container' in self.parts:
+            group = self.parts['group']
+            container = self.parts['container']
+            if group.lower().endswith('.'+container.lower()):
+                group = group[:-(len(container)+1)]
+                self.parts['group'] = group
+
+        # clean group name from having bt site name
+        if 'group' in self.parts:
+
+            group = self.parts['group']
+            sites = '|'.join(bt_sites)
+            pat = '\[(' + sites + ')\]$'
+            group = re.sub(pat, '', group, flags=re.I)
+            if group:
+                self.parts['group'] = group
 
         if len(clean) != 0:
             if len(clean) == 1:
